@@ -4,7 +4,7 @@
 
 ## 🔗 Live Dashboard
 
-- 📊 [View the Power BI dashboard](ADD-YOUR-POWER-BI-LINK-HERE)
+- 📊 [View the Power BI dashboard](https://app.powerbi.com/view?r=eyJrIjoiYmZmOGQxOTMtZDg4ZS00YTg4LTk5YzAtNDVlN2E1ZGY3NzliIiwidCI6ImMyMzNjMDcyLTEzNWItNDMxZC1hZjU5LTM1ZTA1YmFiZjk0MSIsImMiOjh9)
 
 ## 📑 Table of Contents
 
@@ -72,12 +72,12 @@ fuel-prices-uk/
 
 ## 📊 Dataset Content
 
-- 🔗 Source: Kaggle dataset **fuel-prices-uk** ([ADD DATASET LINK AND LICENCE])
+- 🔗 Source: Kaggle dataset **fuel-prices-uk** (licence: GOV.UK open source). I found it through the Kaggle notebook [UK Fuel Costs Data Exploration](https://www.kaggle.com/code/jamesb7/uk-fuel-costs-data-exploration/notebook)
 - ⛽ **price_history.csv:** about 1.18 million price records (`node_id`, `fuel_type`, `price_pence`, `recorded_at`)
 - 🏪 **stations.csv:** 8,503 stations (`brand_name`, `city`, `latitude`, `longitude`, `is_motorway`, `is_supermarket` and more)
 - 🔑 The two files link on `node_id`
 - ⛽ Fuel types: E10 and E5 (petrol), B7 Standard and B7 Premium (diesel), plus a very small number of HVO and B10 records
-- ✅ After cleaning: about 1.18 million price records across 8,278 stations
+- ✅ After cleaning: about 1.18 million price records across about 8,300 stations
 
 ---
 
@@ -107,7 +107,7 @@ fuel-prices-uk/
 
 ## 🗓️ Project Plan
 
-- 📋 Planned and tracked with a [GitHub Project Board](ADD-YOUR-PROJECT-BOARD-LINK) (Backlog, In Progress, Done)
+- 📋 Planned and tracked with a [GitHub Project Board](https://github.com/users/hemacbaker-byte/projects/7/views/1) (Backlog, In Progress, Done)
 
 **Phases**
 
@@ -142,7 +142,7 @@ fuel-prices-uk/
 | BQ1 Price over time | Line chart | Shows trends and peaks clearly |
 | BQ2 Brands | Horizontal bar chart | Easy to rank and compare brands |
 | BQ3 Motorway premium | Grouped column chart | Compares station types side by side |
-| BQ4 Cities | Bar chart (cheapest and dearest) and map | Shows regional differences |
+| BQ4 Cities | Two bar charts (10 cheapest and 10 dearest) | Shows regional differences |
 | BQ5 Diesel gap | Area/line chart | Shows how the gap changes |
 
 - 🎨 Colours stay consistent: Petrol teal `#2A9D8F`, Diesel orange `#E76F51`
@@ -163,7 +163,7 @@ fuel-prices-uk/
 
 - 🔒 **Personal data:** none found. The data is public station information and fuel prices. No customers or drivers are identified. Small independent stations could be sole traders, so the risk is low but not zero; station names and postcodes are not used in any analysis or chart
 - 📜 **UK GDPR:** assessed as not applicable, because no personal data about people is processed. Business details such as station name and address are public
-- 📄 **Licence:** the dataset licence was checked on Kaggle: [ADD LICENCE NAME] and is credited below
+- 📄 **Licence:** the dataset licence was checked on Kaggle: GOV.UK open source (as stated for the dataset) and is credited below
 - 🧮 **Assumption:** prices under 100p or over 300p per litre were treated as errors (1,184 rows removed). This is a judgement call and is documented in the ETL notebook
 - 🏛️ **Governance:** the data source and licence are credited. Raw data is kept unchanged in `data/raw/`, and cleaning steps are documented and repeatable
 - ⚖️ **Fairness and bias:**
@@ -176,18 +176,25 @@ fuel-prices-uk/
 
 ## 🖥️ Dashboard Design
 
-- 🏠 **Page 1 Overview:** KPI cards, price over time, fuel filter (BQ1)
-- 🏷️ **Page 2 Where to fill up:** brands, station type, cities, map (BQ2 to BQ4)
-- ⛽ **Page 3 Diesel vs petrol:** weekly gap (BQ5)
+- 🏠 **Page 1 Overview:** KPI cards, weekly price line chart, station type filter (BQ1)
+- 🏷️ **Page 2 Where to fill up:** brands, station type, 10 cheapest and 10 dearest cities (BQ2 to BQ4)
+- ⛽ **Page 3 Diesel vs petrol ("How big is the gap?"):** weekly gap line chart and KPI card (BQ5)
 - ⚖️ **Page 4 Data and ethics:** source, licence, no personal data, limitations (8 months of data, uneven stations per city), how to read the dashboard
 
 **Communicating to different audiences**
 
 - 🧑‍🤝‍🧑 **Non-technical:** plain-English notes on each page, clear titles, simple charts
 - 🔬 **Technical:** station counts, averages in pence per litre, notes on how the numbers were calculated
-- ♿ **Accessibility:** high-contrast colours, large text, alt text on visuals, consistent layout and navigation buttons
+- ♿ **Accessibility:** high-contrast colours, large text, alt text on visuals, consistent layout and navigation buttons.
 
-*Screenshots: add images from `images/` here*
+**Dashboard screenshots**
+
+| Page | Screenshot |
+|---|---|
+| 1 Overview | ![Overview page](images/dashboard_overview.png) |
+| 2 Where to fill up | ![Where to fill up page](images/dashboard_where_to_fill.png) |
+| 3 Diesel vs petrol | ![Diesel vs petrol page](images/dashboard_diesel_gap.png) |
+| 4 Data and ethics | ![Data and ethics page](images/dashboard_ethics.png) |
 
 ---
 
@@ -208,36 +215,37 @@ fuel-prices-uk/
 - 🧹 **Bad data:** some prices were impossible (such as 0p or over 2,000p) and city names had different capitalisation. I fixed both in the ETL
 - 🔗 **Two tables:** keeping prices and stations as linked tables worked better in Power BI than one huge file
 - 🗓️ **Short time period:** only about 8 months of data, so seasonal patterns cannot be tested
-- 🧮 **Power BI vs Python:** Power BI averages all records while the notebook averages per station first, so numbers can differ by a pence or two
-- 🧠 **What I learned:** plan the folder structure early, make small commits, and check data quality before analysing
+- 🧮 **Power BI vs Python:** the notebook averages each station first, while Power BI averages all price records, so city and brand rankings differ slightly (for example Exeter is about 164p in the notebook and about 160p in Power BI, and Hull appears in the Power BI top 10). Power BI also uses only E10 (petrol) and B7 Standard (diesel), while the notebook groups all petrol and all diesel. Both methods are documented so results can be compared
+- 🧠 **What I learned:** plan the folder structure early, make small commits, and check data quality before analysing.
 
 ---
 
 ## 🐞 Unfixed Bugs
 
-- No known bugs stop the notebooks from running
-- Some cities appear with small differences in spelling that were not caught, and small cities are excluded from rankings
+- No known bugs stop the notebooks from running!
+- Some cities appear with small differences in spelling that were not caught, and small cities are excluded from rankings.
 
 ---
 
 ## 🗺️ Development Roadmap
 
-- 🔄 Add newer data and compare months
-- 📅 Test seasonal and weekday patterns when more data is available
-- 🗺️ Add region groupings (for example England, Scotland, Wales, Northern Ireland)
-- 📊 Add an interactive "cheapest stations near me" page
+- 🔄 Add newer data and compare months.
+- 📅 Test seasonal and weekday patterns when more data is available.
+- 🗺️ Add region groupings (for example England, Scotland, Wales, Northern Ireland).
+- 📊 Add an interactive "cheapest stations near me" page.
 
 ---
 
 ## 🚀 Deployment
 
-- 📊 Dashboard published in Power BI Service ([link](ADD-YOUR-POWER-BI-LINK-HERE))
-- 💻 Code and data stored in this GitHub repository
+- 📊 Dashboard published to the web with Power BI Service ([link](https://app.powerbi.com/view?r=eyJrIjoiYmZmOGQxOTMtZDg4ZS00YTg4LTk5YzAtNDVlN2E1ZGY3NzliIiwidCI6ImMyMzNjMDcyLTEzNWItNDMxZC1hZjU5LTM1ZTA1YmFiZjk0MSIsImMiOjh9))
+- 📥 The Power BI file is also in `dashboards/`, so it can be opened in Power BI Desktop
+- 💻 Code and data stored in this GitHub repository.
 
 **Run it yourself**
 
 ```
-git clone https://github.com/YOUR-USERNAME/fuel-prices-uk.git
+git clone https://github.com/hemacbaker-byte/fuel-prices-uk.git
 cd fuel-prices-uk
 git lfs pull
 pip install -r requirements.txt
@@ -258,12 +266,12 @@ pip install -r requirements.txt
 
 ## 🙏 Credits
 
-- 📊 Dataset: Kaggle **fuel-prices-uk** ([ADD AUTHOR AND LINK])
-- 📚 [Code Institute](https://codeinstitute.net/): learning material and README and notebook templates
-- 🔎 Layout inspiration from other Code Institute student projects (medical appointment no-show analytics and customer churn analytics)
-- 🤖 Claude (Anthropic): ideas, structure, code debugging
-- 📖 Documentation for pandas, matplotlib and seaborn
+- 📊 Dataset: Kaggle **fuel-prices-uk** (found through the Kaggle notebook [UK Fuel Costs Data Exploration by jamesb7](https://www.kaggle.com/code/jamesb7/uk-fuel-costs-data-exploration/notebook))
+- 📚 [Code Institute](https://codeinstitute.net/): learning material and README and notebook templates.
+- 🤖 Claude (Anthropic): ideas, structure, code debugging,readme.
+- 📖 Documentation for pandas, matplotlib and seaborn.
+-visualization (PowerBI).
 
 ## 🤝 Acknowledgements
 
-- Thanks to my Code Institute tutors and mentors: [ADD NAMES]
+- Thanks to my Code Institute tutors vasi & Emma and mentors for their guidance and feedback.
