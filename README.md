@@ -199,20 +199,20 @@ fuel-prices-uk/
 
 ## 🔍 Key Findings
 
-- 📈 **Prices rose strongly:** petrol went from 140p to 181p (+29%) and diesel from 149p to 206p (+38%) between February and October 2026, with both peaking in early October
-- ⛽ **Diesel is always dearer:** the gap grew from 9p to 26p
-- 🛒 **Supermarkets are cheaper:** about 3p per litre below other stations. Maxol and Tesco have the lowest petrol prices
-- 🛣️ **Motorways cost more:** about 14p to 17p extra per litre
-- 🗺️ **Location matters:** about 13p spread between cities, with Northern Ireland cheapest
-- 💼 **Advice:** use supermarket stations, avoid motorway stops, and fleets should plan for faster diesel increases
+- 📈 **Prices rose strongly:** petrol went from 140p to 181p (+29%) and diesel from 149p to 206p (+38%) between February and October 2026, with both peaking in early October.
+- ⛽ **Diesel is always dearer:** the gap grew from 9p to 26p.
+- 🛒 **Supermarkets are cheaper:** about 3p per litre below other stations. Maxol and Tesco have the lowest petrol prices.
+- 🛣️ **Motorways cost more:** about 14p to 17p extra per litre.
+- 🗺️ **Location matters:** about 13p spread between cities, with Northern Ireland cheapest.
+- 💼 **Advice:** use supermarket stations, avoid motorway stops, and fleets should plan for faster diesel increases.
 
 ---
 
 ## 💭 Challenges and Reflection
 
 - 📦 **Large files:** the raw data was over GitHub's 100 MB limit, so I used Git LFS and saved smaller cleaned files
-- 🧹 **Bad data:** some prices were impossible (such as 0p or over 2,000p) and city names had different capitalisation. I fixed both in the ETL
-- 🔗 **Two tables:** keeping prices and stations as linked tables worked better in Power BI than one huge file
+- 🧹 **Bad data:** some prices were impossible (such as 0p or over 2,000p) and city names had different capitalisation. I fixed both in the ETL.
+- 🔗 **Two tables:** keeping prices and stations as linked tables worked better in Power BI than one huge file.
 - 🗓️ **Short time period:** only about 8 months of data, so seasonal patterns cannot be tested
 - 🧮 **Power BI vs Python:** the notebook averages each station first, while Power BI averages all price records, so city and brand rankings differ slightly (for example Exeter is about 164p in the notebook and about 160p in Power BI, and Hull appears in the Power BI top 10). Power BI also uses only E10 (petrol) and B7 Standard (diesel), while the notebook groups all petrol and all diesel. Both methods are documented so results can be compared
 - 🧠 **What I learned:** plan the folder structure early, make small commits, and check data quality before analysing.
