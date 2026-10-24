@@ -154,7 +154,7 @@ fuel-prices-uk/
 - 📊 **EDA:** weekly averages, group comparisons, ranking
 - ⚖️ **Fair comparisons:** averages are taken per station first, so busy stations do not count more than quiet ones
 - 🎨 **Visualisation:** matplotlib and seaborn in notebooks, Power BI for the dashboard
-- 🤖 **Generative AI:** Claude was used for ideas, structure and code debugging. All results were checked and understood by me
+- 🤖 **Generative AI:** Claude was used for ideas, structure and code debugging.
 
 ---
 
@@ -169,7 +169,7 @@ fuel-prices-uk/
   - Cities with few stations (under 20) were excluded from rankings to avoid misleading averages
   - Prices vary by area for reasons such as rural costs and competition, so results are not blame on any station or place
 - 🌍 **Social impact:** fuel costs affect people on low incomes and rural drivers most. Findings are shared to help them save money
-- 🚫 **Responsible use:** the analysis describes the past. It should not be used to set prices unfairly or to predict future prices
+- 🚫 **Responsible use:** the analysis describes the past. It should not be used to set prices unfairly or to predict future prices.
 
 ---
 
@@ -178,7 +178,7 @@ fuel-prices-uk/
 - 🏠 **Page 1 Overview:** KPI cards, weekly price line chart, station type filter (BQ1)
 - 🏷️ **Page 2 Where to fill up:** brands, station type, 10 cheapest and 10 dearest cities (BQ2 to BQ4)
 - ⛽ **Page 3 Diesel vs petrol ("How big is the gap?"):** weekly gap line chart and KPI card (BQ5)
-- ⚖️ **Page 4 Data and ethics:** source, licence, no personal data, limitations (8 months of data, uneven stations per city), how to read the dashboard
+- ⚖️ **Page 4 Data and ethics:** source, licence, no personal data, limitations (8 months of data, uneven stations per city), how to read the dashboard.
 
 **Communicating to different audiences**
 
