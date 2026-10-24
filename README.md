@@ -37,7 +37,7 @@
 - ⚖️ **Ethics:** considered in every stage. Each notebook has an ethics note, and the full review is in the Ethics section
 - 🧪 **Method:** ETL and EDA in Python (Jupyter), then an interactive Power BI dashboard
 - 📈 **Scope:** exploratory analysis only. No machine learning is used
-- 🗓️ **Data period:** 7 February to 21 October 2026
+- 🗓️ **Data period:** 7 February to 21 October 2026.
 
 ---
 
@@ -145,7 +145,6 @@ fuel-prices-uk/
 | BQ4 Cities | Two bar charts (10 cheapest and 10 dearest) | Shows regional differences |
 | BQ5 Diesel gap | Area/line chart | Shows how the gap changes |
 
-- 🎨 Colours stay consistent: Petrol teal `#2A9D8F`, Diesel orange `#E76F51`
 
 ---
 
