@@ -1,6 +1,6 @@
 # ⛽ UK Fuel Prices Analytics
 
-### Python + Power BI project showing how UK petrol and diesel prices changed in 2026, and where drivers can pay less.
+### Python & Power BI project showing how UK petrol and diesel prices changed in 2026, and where drivers can pay less.
 
 ## 🔗 Live Dashboard
 
