@@ -177,7 +177,8 @@ fuel-prices-uk/
 ## 🖥️ Dashboard Design
 
 - 🏠 **Page 1 Overview:** KPI cards, weekly price line chart, station type filter (BQ1)
-- 🏷️ **Page 2 Where to fill up:** brands, station type, 10 cheapest and 10 dearest cities (BQ2 to BQ4)
+- 🏷️ **Page 2 Where to fill up:** brands, station type, 10 cheapest and 10 dearest cities (BQ2 to BQ4). Brand chart: Supermarkets are about 3p cheaper per litre.
+Station-type chart: Motorway stations cost 14p to 17p more per litre.
 - ⛽ **Page 3 Diesel vs petrol ("How big is the gap?"):** weekly gap line chart and KPI card (BQ5)
 - ⚖️ **Page 4 Data and ethics:** source, licence, no personal data, limitations (8 months of data, uneven stations per city), how to read the dashboard.
 
