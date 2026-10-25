@@ -1,4 +1,5 @@
 # ⛽ UK Fuel Prices Analytics
+![Fuel Prices UK Banner](images/fuel-price-banner.jpg)
 
 ### Python & Power BI project showing how UK petrol and diesel prices changed in 2026, and where drivers can pay less.
 
