@@ -100,7 +100,7 @@ fuel-prices-uk/
 | H1 | Diesel is priced above petrol | ✅ Supported | Diesel dearer in all 38 weeks; gap grew from 9p to 26p |
 | H2 | Supermarkets are cheaper than other stations | ✅ Supported | About 2.7p cheaper (petrol) and 3.1p cheaper (diesel) |
 | H3 | Motorway stations charge a premium | ✅ Supported | About 17p more (petrol) and 14p more (diesel) |
-| H4 | Prices differ by region | ✅ Supported | 7 of the 8 cheapest cities are in Northern Ireland; Exeter is dearest; about 13p spread |
+| H4 | Prices differ by region | ✅ Supported | 7 of the 8 cheapest cities are in Northern Ireland; dearest cities are Exeter (notebook) and Hull (dashboard); about 13p spread.
 
 - 📝 Hypotheses were validated using visual and comparative analysis, not formal statistical tests
 
@@ -188,6 +188,7 @@ Station-type chart: Motorway stations cost 14p to 17p more per litre.
 - 🔬 **Technical:** station counts, averages in pence per litre, notes on how the numbers were calculated
 - ♿ **Accessibility:** high-contrast colours, large text, alt text on visuals, consistent layout and navigation buttons.
 
+
 **Dashboard screenshots**
 
 | Page | Screenshot |
@@ -209,6 +210,10 @@ Station-type chart: Motorway stations cost 14p to 17p more per litre.
 - 💼 **Advice:** use supermarket stations, avoid motorway stops, and fleets should plan for faster diesel increases.
 
 ---
+
+**User feedback**
+
+To test that the dashboard is clear for non-technical users, I asked [a friend, who is not a data analyst to explore it without my help. They said "the main message was that diesel costs more than petrol". Also apreciated the clarity while clicking each city it shows how the curve differs.
 
 ## 💭 Challenges and Reflection
 
@@ -262,6 +267,7 @@ pip install -r requirements.txt
 - 📓 **Jupyter Notebooks** in VS Code
 - 📊 **Power BI** for the dashboard
 - 🌿 **Git, GitHub and Git LFS** for version control
+- 🧮 **DAX:** used only for Power BI measures. All project code is Python.
 
 ---
 
